@@ -2,22 +2,22 @@ function nameMenuItem(item) {
   return "Delicious " + item;
 }
 
-function createMenuItem(item, price, type) {
+function createMenuItem(menuItemName, menuItemPrice, menuItemType) {
   var menuItem = {
-    name: item,
-    price: price,
-    type: type
+    name: menuItemName,
+    price: menuItemPrice,
+    type: menuItemType
   }
   return menuItem;
 }
 
-function addIngredients(ingredient, ingredients) {
-  if (ingredients.includes(ingredient)) {
-    // do nothing
+function addIngredients(newIngredient, ingredients) {
+  if (ingredients.includes(newIngredient)) {
+    return ingredients;
   } else {
-    ingredients.push(ingredient);
+    ingredients.push(newIngredient);
+    return ingredients;
   }
-  return ingredients;
 }
 
 function formatPrice(initialPrice) {
@@ -28,10 +28,10 @@ function decreasePrice(price) {
   return price - (price * 0.1);
 }
 
-function createRecipe(title, ingredients, menuType) {
+function createRecipe(recipeTitle, recipeIngredients, menuType) {
   var recipe = {
-    title: title,
-    ingredients: ingredients,
+    title: recipeTitle,
+    ingredients: recipeIngredients,
     type: menuType
   }
   return recipe;
