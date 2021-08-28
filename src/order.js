@@ -16,14 +16,11 @@ function refundOrder(orderNum, deliveryOrders) {
 }
 
 function listItems(deliveryOrders) {
-  var listOfItems = "";
+  var listOfItems = [];
   for (var i = 0; i < deliveryOrders.length; i++) {
-    listOfItems = listOfItems + deliveryOrders[i].item;
-    if (i < deliveryOrders.length - 1) {
-      listOfItems = listOfItems + ", ";
-    }
+    listOfItems.push(deliveryOrders[i].item);
   }
-  return listOfItems;
+  return listOfItems.join(', ');
 }
 
 function searchOrder(deliveryOrders, itemName) {
