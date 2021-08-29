@@ -11,14 +11,11 @@ class Chef {
     }
   }
   checkForFood(foodItem) {
-    var menuNames = ['breakfast', 'lunch', 'dinner'];
-    for (var i = 0; i < menuNames.length; i++) {
-      if (this.restaurant.menus[menuNames[i]].includes(foodItem)) {
+      if (this.restaurant.menus[foodItem.type].includes(foodItem)) {
         return `Yes, we're serving ${foodItem.name} today!`;
       } else {
         return `Sorry, we aren't serving ${foodItem.name} today.`;
       }
-    }
   }
 }
 
