@@ -11,16 +11,16 @@ class Chef {
     }
   }
   checkForFood(foodItem) {
-    if (this.restaurant.menus.breakfast.includes(foodItem)) {
-      return `Yes, we're serving ${foodItem.name} today!`;
-    } else if (this.restaurant.menus.lunch.includes(foodItem)) {
-      return `Yes, we're serving ${foodItem.name} today!`;
-    } else if (this.restaurant.menus.dinner.includes(foodItem)) {
-      return `Yes, we're serving ${foodItem.name} today!`;
-    } else {
-      return `Sorry, we aren't serving ${foodItem.name} today.`;
+    var menuNames = ['breakfast', 'lunch', 'dinner'];
+    for (var i = 0; i < menuNames.length; i++) {
+      if (this.restaurant.menus[menuNames[i]].includes(foodItem)) {
+        return `Yes, we're serving ${foodItem.name} today!`;
+      } else {
+        return `Sorry, we aren't serving ${foodItem.name} today.`;
+      }
     }
   }
 }
+
 
 module.exports = Chef;
